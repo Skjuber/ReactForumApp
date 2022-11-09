@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  margin-bottom: 25px;
+  padding-right: 46px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userImage {
+  align-self: flex-start;
+  border-radius: 50%;
+  height: 28px;
+  min-height: 28px;
+  min-width: 28px;
+  width: 28px;
+}
+
+.email {
+  margin-top: 7px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  text-transform: lowercase;
+}
+
+.body {
+  margin-left: 6px;
+}
