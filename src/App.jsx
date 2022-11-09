@@ -8,6 +8,7 @@ import { Container } from "react-bootstrap";
 
 const App = () => {
   const allPosts = usePosts();
+  console.log(allPosts);
 
   return (
     <Container className="border border-primary bg-light border">

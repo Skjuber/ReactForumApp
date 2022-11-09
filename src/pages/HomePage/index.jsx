@@ -8,12 +8,14 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import Comment from "../../components/Comment";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function Homepage({ allPosts }) {
+  const { id } = useParams();
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(
-        `https://jsonplaceholder.typicode.com/comments?postId=1`
+        `https://jsonplaceholder.typicode.com/comments`
       );
       return data;
     } catch (error) {
@@ -23,12 +25,19 @@ function Homepage({ allPosts }) {
   const [show, setShow] = useState(false);
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
+
+  // `https://jsonplaceholder.typicode.com/comments/1 Zasto ovo ne radi?`
+  //Zasto ovo ne radi? comments[post.id]
   // post.id proslijediti u komentare
+  //Možda to nekako dohvatiti sa useParams?
+  // `https://jsonplaceholder.typicode.com/comments?postId=1`
   const handleClose = () => setShow(false);
   const handleShow = async (post) => {
     const comments = await fetchComments();
     setComments(comments);
-    console.log(comments);
+
+    // console.log(comments);
+
     setShow(true);
     setPost(post);
   };
@@ -41,7 +50,7 @@ function Homepage({ allPosts }) {
           </Modal.Header>
 
           <Modal.Body>
-            {/* <p>{post.body}</p> */}
+            <p>{post.body}</p>
             {comments.map((c, i) => (
               <Comment key={i} name={c.name} email={c.email} body={c.body} />
             ))}
