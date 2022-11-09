@@ -65,11 +65,10 @@ function Homepage({ allPosts }) {
             </Button>
           </Modal.Footer>
         </Modal>
-        <Container>
-          <h2>All posts</h2>
-          {/* <Button variant = "primary">Alo</Button> */}
-          <p>{allPosts.length} Posts</p>
-        </Container>
+
+        <h4>All posts</h4>
+        {/* <Button variant = "primary">Alo</Button> */}
+        <p>{allPosts.length} Posts</p>
 
         <div className="bg-light border">
           {allPosts.map((p, i) => (

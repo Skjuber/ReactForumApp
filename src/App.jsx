@@ -11,19 +11,17 @@ const App = () => {
   console.log(allPosts);
 
   return (
-    <Container className="border border-primary bg-light border">
-      <Router>
-        <Routes>
-          <Route element={<PageLayout />}>
-            <Route path="/" element={<Homepage allPosts={allPosts} />} />
-            <Route path="/posts/:id" element={<PostPage />} />
-            <Route path="/about" element={<AboutPage />}>
-              About
-            </Route>
+    <Router>
+      <Routes>
+        <Route element={<PageLayout />}>
+          <Route path="/" element={<Homepage allPosts={allPosts} />} />
+          <Route path="/posts/:id" element={<PostPage />} />
+          <Route path="/about" element={<AboutPage />}>
+            About
           </Route>
-        </Routes>
-      </Router>
-    </Container>
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 

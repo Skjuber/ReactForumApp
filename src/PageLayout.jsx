@@ -6,12 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const PageLayout = () => {
   return (
-    <Container s>
+    <>
       <Header />
-      <div className={css.main}>
-        <Outlet />
-      </div>
-    </Container>
+
+      <Outlet />
+    </>
   );
 };
 

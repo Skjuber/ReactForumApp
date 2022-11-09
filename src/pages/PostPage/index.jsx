@@ -47,7 +47,7 @@ const PostPage = () => {
       </Link>
       <main className={css.container}>
         <div className={css.top}>
-          <h1>{singlePost?.title}Ante</h1>
+          <h1>{singlePost?.title}</h1>
           <p>{singlePost?.body}</p>
         </div>
         {allComments

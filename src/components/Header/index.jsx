@@ -7,27 +7,29 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navigation = () => {
   return (
-    <Navbar>
-      <Nav class="border border-secondary ">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `${css.navlink}  ${isActive ? `${css.active}` : ""}`
-          }
-        >
-          Home
-        </NavLink>{" "}
-        {/* {" I "} */}
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `${css.navlink}  ${isActive ? `${css.active}` : ""}`
-          }
-        >
-          About
-        </NavLink>
-      </Nav>
-    </Navbar>
+    <Container fluid className="border border-secondary  ">
+      <Navbar>
+        <Nav>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${css.navlink}  ${isActive ? `${css.active}` : ""}`
+            }
+          >
+            Home
+          </NavLink>{" "}
+          {/* {" I "} */}
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${css.navlink}  ${isActive ? `${css.active}` : ""}`
+            }
+          >
+            About
+          </NavLink>
+        </Nav>
+      </Navbar>
+    </Container>
   );
 };
 
