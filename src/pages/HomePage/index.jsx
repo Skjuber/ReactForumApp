@@ -6,28 +6,45 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
+import Comment from "../../components/Comment";
+import axios from "axios";
 
 function Homepage({ allPosts }) {
+  const fetchComments = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://jsonplaceholder.typicode.com/comments?postId=1`
+      );
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const [show, setShow] = useState(false);
-
+  const [post, setPost] = useState({});
+  const [comments, setComments] = useState([]);
+  // post.id proslijediti u komentare
   const handleClose = () => setShow(false);
-  const handleShow = (id, body) => {
+  const handleShow = async (post) => {
+    const comments = await fetchComments();
+    setComments(comments);
+    console.log(comments);
     setShow(true);
-    console.log(id, body);
+    setPost(post);
   };
   return (
     <main>
-      <Container className="pt-5">
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
+      <Container>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title> </Modal.Title>
+            <Modal.Title>{post.title} </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            <p></p>
+            {/* <p>{post.body}</p> */}
+            {comments.map((c, i) => (
+              <Comment key={i} name={c.name} email={c.email} body={c.body} />
+            ))}
           </Modal.Body>
 
           <Modal.Footer>
@@ -39,14 +56,17 @@ function Homepage({ allPosts }) {
             </Button>
           </Modal.Footer>
         </Modal>
-        <h2>All posts</h2>
-        {/* <Button variant = "primary">Alo</Button> */}
-        <p>{allPosts.length} Posts</p>
+        <Container>
+          <h2>All posts</h2>
+          {/* <Button variant = "primary">Alo</Button> */}
+          <p>{allPosts.length} Posts</p>
+        </Container>
 
         <div className="bg-light border">
           {allPosts.map((p, i) => (
             <SinglePost
               handleShow={handleShow}
+              post={p}
               key={i}
               title={p.title}
               id={p.id}
