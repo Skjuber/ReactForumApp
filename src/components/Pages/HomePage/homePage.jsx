@@ -1,17 +1,17 @@
-import SinglePost from "../../SinglePost";
+import SinglePost from "./SinglePost/singlePost";
 
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import Comment from "../CommentsSection/Comment";
+import Comment from "../CommentsSection/Comment/comment";
 import axios from "axios";
 
 function Homepage({ allPosts, allUsers }) {
   const getUserById = (id) => {
     const user = allUsers.find((u) => u.id === id);
-    console.log(user);
+
     return user;
   };
 
