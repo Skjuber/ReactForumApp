@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Comment from "../../components/Comment";
+import Comment from "./Comment";
 
 const PostPage = () => {
   const [allComments, setAllComments] = useState([]);

@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageLayout from "./components/PageLayout";
 import usePosts from "./components/hooks/usePosts";
-import Homepage from "./pages/HomePage";
-import PostPage from "./pages/PostPage";
-import AboutPage from "./pages/AboutPage";
+import Homepage from "./components/Pages/HomePage";
+import PostPage from "./components/Pages/CommentsSection";
+import AboutPage from "./components/Pages/AboutPage";
 
 import useUsers from "./components/hooks/useUsers";
 

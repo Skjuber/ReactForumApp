@@ -1,13 +1,12 @@
-import SinglePost from "../../components/SinglePost";
+import SinglePost from "../../SinglePost";
 
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import Comment from "../../components/Comment";
+import Comment from "../CommentsSection/Comment";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 function Homepage({ allPosts, allUsers }) {
   const getUserById = (id) => {
@@ -16,7 +15,6 @@ function Homepage({ allPosts, allUsers }) {
     return user;
   };
 
-  const { id } = useParams();
   const fetchComments = async (postIdentificationNumber) => {
     try {
       const { data } = await axios.get(
@@ -31,17 +29,10 @@ function Homepage({ allPosts, allUsers }) {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
 
-  // `https://jsonplaceholder.typicode.com/comments/1 Zasto ovo ne radi?`
-  //Zasto ovo ne radi? comments[post.id]
-  // post.id proslijediti u komentare
-  //Možda to nekako dohvatiti sa useParams?
-  // `https://jsonplaceholder.typicode.com/comments?postId=1`
   const handleClose = () => setShow(false);
   const handleShow = async (post) => {
     const comments = await fetchComments(post.id);
     setComments(comments);
-
-    // console.log(comments);
 
     setShow(true);
     setPost(post);
@@ -71,9 +62,6 @@ function Homepage({ allPosts, allUsers }) {
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save changes
             </Button>
           </Modal.Footer>
         </Modal>
