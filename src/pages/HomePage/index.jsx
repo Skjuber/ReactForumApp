@@ -1,6 +1,5 @@
 import SinglePost from "../../components/SinglePost";
-import css from "./homepage.module.css";
-import Stack from "react-bootstrap/Stack";
+
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";

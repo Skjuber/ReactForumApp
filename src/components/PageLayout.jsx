@@ -1,7 +1,6 @@
-import Header from "./components/Header";
+import Header from "./Header";
 import { Outlet } from "react-router-dom";
-import css from "./pagelayout.module.css";
-import Container from "react-bootstrap/Container";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const PageLayout = () => {

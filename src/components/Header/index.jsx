@@ -8,7 +8,7 @@ import { SiAirchina } from "react-icons/si";
 
 const Navigation = () => {
   return (
-    <Container fluid className="border border-secondary  ">
+    <Container fluid className="border border-secondary bg-light">
       <Navbar>
         <Nav>
           <SiAirchina className="m-2"></SiAirchina>

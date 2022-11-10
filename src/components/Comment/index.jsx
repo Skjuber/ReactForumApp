@@ -1,4 +1,4 @@
-import { Col, Container, Row, Stack } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import css from "./comment.module.css";
 import userImage from "./placeholder-user.png";
 import "bootstrap/dist/css/bootstrap.min.css";

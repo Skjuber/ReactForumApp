@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PageLayout from "./PageLayout";
-import usePosts from "./hooks/usePosts";
+import PageLayout from "./components/PageLayout";
+import usePosts from "./components/hooks/usePosts";
 import Homepage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
 import AboutPage from "./pages/AboutPage";
-import { Container } from "react-bootstrap";
-import useUsers from "./hooks/useUsers";
+
+import useUsers from "./components/hooks/useUsers";
 
 const App = () => {
   const allPosts = usePosts();

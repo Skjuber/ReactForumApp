@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import "./singlePist.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import { Row, Stack } from "react-bootstrap";
 
 const SinglePost = ({ title, id, body, post, handleShow, user }) => {
   return (
