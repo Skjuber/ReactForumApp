@@ -58,7 +58,13 @@ function Homepage({ allPosts, allUsers }) {
           <Modal.Body>
             <p>{post.body}</p>
             {comments.map((c, i) => (
-              <Comment key={i} name={c.name} email={c.email} body={c.body} />
+              <Comment
+                key={i}
+                name={c.name}
+                email={c.email}
+                body={c.body}
+                user={getUserById(c.id)}
+              />
             ))}
           </Modal.Body>
 

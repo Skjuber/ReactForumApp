@@ -1,11 +1,11 @@
-import css from './comment.module.css'
-import userImage from './placeholder-user.png';
+import css from "./comment.module.css";
+import userImage from "./placeholder-user.png";
 
-const Comment = ({ name, email, body }) => {
+const Comment = ({ name, email, body, user }) => {
   return (
     <div className={css.container}>
       <div className={css.userInfo}>
-        <img src={userImage} className={css.userImage} alt="user avatar" />
+        <img src={user?.img} className={css.userImage} alt="user avatar" />
       </div>
       <div className={css.body}>
         <p className={css.email}>{email}</p>
@@ -14,6 +14,6 @@ const Comment = ({ name, email, body }) => {
       </div>
     </div>
   );
-}
- 
+};
+
 export default Comment;
