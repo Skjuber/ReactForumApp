@@ -1,3 +1,3 @@
 # Single Page Forum Application with React
 
-I made this project for practice.Test
+I made this project for practice.
