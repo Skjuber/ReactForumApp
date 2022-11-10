@@ -10,12 +10,18 @@ import Comment from "../../components/Comment";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-function Homepage({ allPosts }) {
+function Homepage({ allPosts, allUsers }) {
+  const getUserById = (id) => {
+    const user = allUsers.find((u) => u.id === id);
+    console.log(user);
+    return user;
+  };
+
   const { id } = useParams();
-  const fetchComments = async () => {
+  const fetchComments = async (postIdentificationNumber) => {
     try {
       const { data } = await axios.get(
-        `https://jsonplaceholder.typicode.com/comments`
+        `https://jsonplaceholder.typicode.com/comments?postId=${postIdentificationNumber}`
       );
       return data;
     } catch (error) {
@@ -33,7 +39,7 @@ function Homepage({ allPosts }) {
   // `https://jsonplaceholder.typicode.com/comments?postId=1`
   const handleClose = () => setShow(false);
   const handleShow = async (post) => {
-    const comments = await fetchComments();
+    const comments = await fetchComments(post.id);
     setComments(comments);
 
     // console.log(comments);
@@ -79,6 +85,7 @@ function Homepage({ allPosts }) {
               title={p.title}
               id={p.id}
               body={p.body}
+              user={getUserById(p.userId)}
             />
           ))}
         </div>

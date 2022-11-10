@@ -5,16 +5,20 @@ import Homepage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
 import AboutPage from "./pages/AboutPage";
 import { Container } from "react-bootstrap";
+import useUsers from "./hooks/useUsers";
 
 const App = () => {
   const allPosts = usePosts();
-  console.log(allPosts);
+  const allUsers = useUsers();
 
   return (
     <Router>
       <Routes>
         <Route element={<PageLayout />}>
-          <Route path="/" element={<Homepage allPosts={allPosts} />} />
+          <Route
+            path="/"
+            element={<Homepage allPosts={allPosts} allUsers={allUsers} />}
+          />
           <Route path="/posts/:id" element={<PostPage />} />
           <Route path="/about" element={<AboutPage />}>
             About
