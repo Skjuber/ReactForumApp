@@ -2,7 +2,7 @@ import "./singlePost.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 
-const SinglePost = ({ title, id, body, post, handleShow, user }) => {
+const SinglePost = ({ title, body, post, handleShow, user }) => {
   return (
     <Container fluid className="border border-secondary  ">
       <h2

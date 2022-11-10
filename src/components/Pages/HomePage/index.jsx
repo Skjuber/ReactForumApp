@@ -42,20 +42,15 @@ function Homepage({ allPosts, allUsers }) {
       <Container>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{post.title} </Modal.Title>
+            <Modal.Title>{post.title}</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <p>{post.body}</p>
-            <p className="text-muted">Comments</p>
+            <p className="text-muted"></p>
+
             {comments.map((c, i) => (
-              <Comment
-                key={i}
-                name={c.name}
-                email={c.email}
-                body={c.body}
-                user={getUserById(c.id)}
-              />
+              <Comment key={i} name={c.name} email={c.email} body={c.body} />
             ))}
           </Modal.Body>
 
