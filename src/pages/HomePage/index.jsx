@@ -57,6 +57,7 @@ function Homepage({ allPosts, allUsers }) {
 
           <Modal.Body>
             <p>{post.body}</p>
+            <p className="text-muted">Comments</p>
             {comments.map((c, i) => (
               <Comment
                 key={i}

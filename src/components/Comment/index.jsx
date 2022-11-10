@@ -1,18 +1,27 @@
+import { Col, Container, Row, Stack } from "react-bootstrap";
 import css from "./comment.module.css";
 import userImage from "./placeholder-user.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Comment = ({ name, email, body, user }) => {
+const Comment = ({ name, email, body }) => {
   return (
-    <div className={css.container}>
-      <div className={css.userInfo}>
-        <img src={user?.img} className={css.userImage} alt="user avatar" />
-      </div>
-      <div className={css.body}>
-        <p className={css.email}>{email}</p>
-        <p>{name}</p>
-        <p>{body}</p>
-      </div>
-    </div>
+    <Container className="border border-bottom">
+      <Row className={css.container}>
+        <div className={css.userInfo}></div>
+        <Container className=" d-flex justify-content-start">
+          <img
+            src={userImage}
+            className={css.userImage}
+            alt="user avatar"
+          ></img>
+          <p className="p-1 text-success">{email}</p>
+        </Container>
+        <div>
+          <p>{name}</p>
+          <p>{body}</p>
+        </div>
+      </Row>
+    </Container>
   );
 };
 

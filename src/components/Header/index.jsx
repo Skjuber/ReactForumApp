@@ -4,12 +4,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { SiAirchina } from "react-icons/si";
 
 const Navigation = () => {
   return (
     <Container fluid className="border border-secondary  ">
       <Navbar>
         <Nav>
+          <SiAirchina className="m-2"></SiAirchina>
           <NavLink
             to="/"
             className={({ isActive }) =>
