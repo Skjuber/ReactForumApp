@@ -1,6 +1,6 @@
 # React Single-Page Forum Application
 
-I started this project for practice.The goal was to create simple forum app while trying to emulate famous forum sites like Reddit.com.
+I started this project for practice. The goal was to create simple forum app while trying to emulate famous forum sites like Reddit.com.
 You can test out the app's functionality [here](https://react-forum-app.vercel.app/).
 
 # Technologies
