@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Comment from "./Comment/comment";
 
-const PostPage = () => {
+const CommentsSection = () => {
   const [allComments, setAllComments] = useState([]);
 
   const fetchComments = async () => {
@@ -29,4 +29,4 @@ const PostPage = () => {
   );
 };
 
-export default PostPage;
+export default CommentsSection;
