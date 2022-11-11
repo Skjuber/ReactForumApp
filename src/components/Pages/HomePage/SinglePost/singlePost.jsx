@@ -4,12 +4,17 @@ import Container from "react-bootstrap/Container";
 
 const SinglePost = ({ title, body, post, handleShow, user }) => {
   return (
-    <Container fluid className="border border-secondary  ">
+    <Container fluid className="border-bottom border-secondary  ">
       <h2
-        className="display-5 p-3 mb-2 text-primary "
+        className="display-7 p-3 mb-2 text-dark "
         onClick={() => handleShow(post)}
       >
-        <img src={user?.img} alt="" /> {title}
+        <img
+          className="border border-secondary border-2"
+          src={user?.img}
+          alt=""
+        />{" "}
+        {title}
       </h2>
       <p className="font-weight-normal">{body}</p>
       <Container className="d-flex justify-content-end text-secondary">

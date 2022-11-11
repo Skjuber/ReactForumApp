@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Comment = ({ name, email, body }) => {
   return (
-    <Container className="border border-bottom">
+    <Container className="border-bottom border-secondary pt-3">
       <Row className={css.container}>
         <div className={css.userInfo}></div>
         <Container className=" d-flex justify-content-start">
@@ -14,7 +14,7 @@ const Comment = ({ name, email, body }) => {
             className={css.userImage}
             alt="user avatar"
           ></img>
-          <p className="p-1 text-success">{email}</p>
+          <p className="p-1 text-dark">{email}</p>
         </Container>
         <div>
           <p>{name}</p>

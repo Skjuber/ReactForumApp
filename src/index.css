@@ -1,0 +1,7 @@
+body {
+  background: linear-gradient(90deg, #ffb3ff 0%, #ccffcc 100%);
+}
+
+.modal .modal-content {
+  background: linear-gradient(90deg, #ffb3ff 0%, #ccffcc 100%);
+}

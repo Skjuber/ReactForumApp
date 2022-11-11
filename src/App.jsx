@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageLayout from "./components/PageLayout";
 import usePosts from "./components/utils/usePosts";
 import Homepage from "./components/Pages/HomePage/homePage";
-import PostPage from "./components/Pages/CommentsSection/commentsSection";
+
 import AboutPage from "./components/Pages/AboutPage/aboutPage";
 
 import useUsers from "./components/utils/useUsers";
+import "./index.css";
 
 const App = () => {
   const allPosts = usePosts();
@@ -19,7 +20,6 @@ const App = () => {
             path="/"
             element={<Homepage allPosts={allPosts} allUsers={allUsers} />}
           />
-          <Route path="/posts/:id" element={<PostPage />} />
           <Route path="/about" element={<AboutPage />}>
             About
           </Route>

@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 
 const Aboutpage = () => {
   return (
-    <Col xs={4} className="border border-secondary m-3  bg-light">
+    <Col xs={4} className="border border-secondary m-3  ">
       <Row className="m-1">
         <h1>React forum app</h1>
       </Row>

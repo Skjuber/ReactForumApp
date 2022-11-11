@@ -38,48 +38,46 @@ function Homepage({ allPosts, allUsers }) {
     setPost(post);
   };
   return (
-    <main>
-      <Container>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{post.title}</Modal.Title>
-          </Modal.Header>
+    <Container className="pt-4">
+      <Modal show={show} onHide={handleClose} className="modal">
+        <Modal.Header closeButton className="border-bottom border-secondary  ">
+          <Modal.Title>{post.title}</Modal.Title>
+        </Modal.Header>
 
-          <Modal.Body>
-            <p>{post.body}</p>
-            <p className="text-muted">comments</p>
+        <Modal.Body>
+          <p>{post.body}</p>
+          <h5 className="text-dark">comments</h5>
 
-            {comments.map((c, i) => (
-              <Comment key={i} name={c.name} email={c.email} body={c.body} />
-            ))}
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
-        <h4>All posts</h4>
-        {/* <Button variant = "primary">Alo</Button> */}
-        <p>{allPosts.length} Posts</p>
-
-        <div className="bg-light border">
-          {allPosts.map((p, i) => (
-            <SinglePost
-              handleShow={handleShow}
-              post={p}
-              key={i}
-              title={p.title}
-              id={p.id}
-              body={p.body}
-              user={getUserById(p.userId)}
-            />
+          {comments.map((c, i) => (
+            <Comment key={i} name={c.name} email={c.email} body={c.body} />
           ))}
-        </div>
-      </Container>
-    </main>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <h4>All posts</h4>
+      {/* <Button variant = "primary">Alo</Button> */}
+      <p>{allPosts.length} Posts</p>
+
+      <div>
+        {allPosts.map((p, i) => (
+          <SinglePost
+            handleShow={handleShow}
+            post={p}
+            key={i}
+            title={p.title}
+            id={p.id}
+            body={p.body}
+            user={getUserById(p.userId)}
+          />
+        ))}
+      </div>
+    </Container>
   );
 }
 
