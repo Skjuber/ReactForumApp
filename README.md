@@ -8,7 +8,6 @@ You can test out the app's functionality [here](https://react-forum-app.vercel.a
 - React JS 18.2.0
 - React Router
 - Bootstrap
-- JSONPlaceholder
 
 # JSONPlaceholder
 
