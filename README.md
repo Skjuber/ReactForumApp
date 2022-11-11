@@ -18,7 +18,7 @@ Information for the site was fetched from [JSONPlaceholder](https://jsonplacehol
 
 - Routing created with React Router.
 - Fake API served as data.
-- Each user was assinged it's user image.
+- Each user was assigned it's user image.
 - Bootstrap's pop up modal feature was utilizied.
 
 # Getting Started with Create React App
