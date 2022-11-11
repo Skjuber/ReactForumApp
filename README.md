@@ -7,7 +7,7 @@ You can test out the app's functionality [here](https://react-forum-app.vercel.a
 
 - React JS 18.2.0
 - React Router
-- BootStrap
+- Bootstrap
 - JSONPlaceholder
 
 # JSONPlaceholder
@@ -19,7 +19,7 @@ Information for the site was fetched from [JSONPlaceholder](https://jsonplacehol
 - Routing created with React Router.
 - Fake API served as data.
 - Each user was assigned it's user image.
-- Bootstrap's pop up modal feature was utilizied.
+- Bootstrap's pop up modal feature was utilized.
 
 # Getting Started with Create React App
 
