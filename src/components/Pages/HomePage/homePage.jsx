@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import Comment from "../CommentsSection/Comment/comment";
+import Comment from "./Comment/comment";
 import axios from "axios";
 
 function Homepage({ allPosts, allUsers }) {
@@ -46,7 +46,7 @@ function Homepage({ allPosts, allUsers }) {
 
         <Modal.Body>
           <p>{post.body}</p>
-          <h5 className="text-dark">comments</h5>
+          <h5 className="text-dark">Comments</h5>
 
           {comments.map((c, i) => (
             <Comment key={i} name={c.name} email={c.email} body={c.body} />
@@ -61,7 +61,7 @@ function Homepage({ allPosts, allUsers }) {
       </Modal>
 
       <h4>All posts</h4>
-      {/* <Button variant = "primary">Alo</Button> */}
+
       <p>{allPosts.length} Posts</p>
 
       <div>
