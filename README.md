@@ -11,7 +11,7 @@ You can test out the app's functionality [here](https://react-forum-app.vercel.a
 
 # JSONPlaceholder
 
-Information for the site was fetched from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+Data for the site was obtained from a fake REST API site [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
 
 # Features
 
